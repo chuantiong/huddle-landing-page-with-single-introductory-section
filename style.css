@@ -1,0 +1,257 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@400;600&display=swap');
+
+:root {
+    --white-clr: #fff;
+    --fw-reg: 400;
+    --fw-semibold: 600;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    display: grid;
+    place-items: center;
+    background-color: #684BB1;
+    height: 100vh;
+}
+
+/* General */
+
+h1,
+p {
+    margin: 0;
+}
+
+.intro__title,
+.intro__description {
+    text-align: center;
+    color: var(--white-clr);
+}
+
+.intro__title {
+    font-size: 1.5rem;
+    font-weight: var(--fw-semibold);
+    line-height: 2.25rem;
+    margin-bottom: .666em;
+}
+
+.intro__description {
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.5rem;
+    margin-bottom: 1.5em;
+}
+
+img {
+    display: block;
+}
+
+.intro__register-btn {
+    display: block;
+    width: fit-content;
+    background: var(--white-clr);
+    color: #684BB1;
+    text-decoration: none;
+    font-size: .75rem;
+    line-height: 1.125rem;
+    cursor: pointer;
+    padding: .91em 6.29em;
+    margin: 0 auto 4em auto;
+    border-radius: 100vw;
+}
+
+.intro__register-btn:hover {
+    background: #E880E8;
+    color: var(--white-clr);
+    box-shadow: 2px 4px 9px 3px rgba(0, 0, 0, 0.26);
+}
+
+.intro__social-icons-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: .68rem;
+}
+
+.intro__social-icon {
+    display: flex;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+    color: var(--white-clr);
+    width: 28px;
+    height: 28px;
+    border: 1px solid var(--white-clr);
+    border-radius: 100%;
+}
+
+.intro__social-icon:hover {
+    color: #FF52C1;
+    border-color: #FF52C1;
+}
+
+i {
+    font-size: .8125rem;
+}
+
+/* Layouts */
+
+.container {
+    background-color: #684BB1;
+    width: 100%;
+    min-width: 375px;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.bg-image {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: url("./images/bg-mobile.svg");
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: 375px;
+}
+
+.header {
+    padding: 2.375rem 2.5rem 4.375rem;
+}
+
+.header__logo {
+    width: 120px;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 2.5rem;
+}
+
+.main__image {
+    width: clamp(296px, 100%, 500px);
+    height: fit-content;
+    padding-inline: 2.5rem;
+    margin-inline: auto;
+    margin-bottom: 3.75rem;
+}
+
+.intro {
+    padding-inline: 2.25rem;
+}
+
+/* Footer */
+
+.footer {
+    background: #F2F2F2;
+    opacity: .9;
+    padding: 2em;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+}
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+
+/* Media Queries */
+
+@media (min-width: 375px) and (max-width: 899px) {
+    .bg-image {
+        background-size: 100%;
+        /* Resize to fit the container for screens between 375px and 800px */
+    }
+}
+
+@media (min-width: 900px) {
+    .intro__title,
+    .intro__description {
+        text-align: start;
+    }
+
+    .intro__title {
+        font-size: 2.5rem;
+        line-height: 3.75rem;
+        margin-bottom: .6em;
+    }
+
+    .intro__description {
+        font-size: 1.125rem;
+        line-height: 1.6875rem;
+        margin-bottom: 1.5em;
+    }
+
+    .main__image {
+        width: clamp(296px, 50vw, 696px);
+        padding-inline: 0;
+        margin-bottom: 0;
+    }
+
+    .container {
+        overflow: hidden;
+    }
+
+    .bg-image {
+        background: url("./images/bg-desktop.svg");
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+
+    .header {
+        padding: 4rem 5rem 6.5rem;
+    }
+
+    .header__logo {
+        width: 200px;
+    }
+
+    .main {
+        flex-direction: row;
+        gap: 3.69rem;
+        padding: 0 5rem 2.5rem;
+    }
+
+    .intro {
+        flex: 1;
+        width: 50%;
+        padding-inline: 0;
+        padding-top: 2rem;
+    }
+
+    .intro__register-btn {
+        font-size: 1.125rem;
+        line-height: 1.6875rem;
+        margin-left: 0;
+        margin-bottom: 11.44em;
+        padding: .8em 3.55em;
+    }
+
+    .intro__social-icons-wrapper {
+        justify-content: flex-end;
+        gap: 1rem;
+    }
+
+    .intro__social-icon {
+        width: 40px;
+        height: 40px;
+    }
+
+    i {
+        font-size: 1.1875rem;
+    }
+
+}
